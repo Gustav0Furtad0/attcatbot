@@ -2,6 +2,7 @@ from time import sleep
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.select import Select
+from attcat import listaItens, catBranet
 
 class ChromeDriver:
     options = webdriver.ChromeOptions()
@@ -19,10 +20,33 @@ class ChromeDriver:
         
 
     def itens(self, branet, prefeitura):
-        def analyzeItem(name):
-            for item in branet:
-                if item.name == name:
-                    for 
+        dataBranet = catBranet(branet);
+        dataPrefeitura = listaItens(prefeitura["fName"], prefeitura["colunaQuantidade"], prefeitura["ixTabela"], prefeitura["colunaNomeCliente"], prefeitura["colunaUnidade"], prefeitura["colunaCodCliente"]);
+        
+        def analyzeItem(name, qtd):
+            print("Analisando item: " + name)
+            codItem = 0;
+            for item in dataBranet:
+                if item["nomeItem"] == name:
+                    codItem = int(item["codCliente"])
+                    break
+            
+            for item in dataPrefeitura:
+
+                if int(item["codCliente"]) == codItem:
+                    print("Nome sistema: " + name + "| Nome Prefeitura: " + item["nomeCliente"] + "\nQuantidade: " + str(qtd) + "| Quantidade e unidade Prefeitura: " + str(item["quantidade"]) + " " + item["unidade"])
+                    if input("Os itens acima são iguais ? (y/n) ") == 'y':
+                        return item["quantidade"]
+
+                    else:
+                        return False
+                    
+                print("")
+                print("")
+                print("")
+                    
+            return False
+                            
         
         select = Select(self.driver.find_element(By.XPATH, "/html/body/div[@id='div_principal']/div[@id='div_principal']/div[@id='conteudo_template']/span[@id='conteudo']/form[@id='cadastro_itens']/div/div/div/div[1]/select"))
         select.select_by_value('500')
@@ -39,29 +63,30 @@ class ChromeDriver:
                 
             rows = self.driver.find_elements(By.XPATH, "/html/body/div[@id='div_principal']/div[@id='div_principal']/div[@id='conteudo_template']/span[@id='conteudo']/form/div/div/div/div/table/tbody/tr")
             
+            nonUsedItem = []
+            
             for row in rows:
                 cels = row.find_elements(By.TAG_NAME, 'td')
+                item = analyzeItem(cels[1].text, int(cels[4].text))
                 
-                if analyzeItem(cels[1].text):
+                if item != False:
                     btsEdit = cels[12].find_element(By.TAG_NAME, 'div').find_elements(By.TAG_NAME, 'a')
                     btsEdit[0].click()
                     
                     inputQtd = cels[4].find_element(By.TAG_NAME, 'div').find_elements(By.TAG_NAME, 'div')[1].find_element(By.TAG_NAME, 'span').find_elements(By.TAG_NAME, 'input')
                     inputQtd[0].click()
                     inputQtd[0].clear()
-                    inputQtd[0].send_keys('2')
+                    inputQtd[0].send_keys(item)
 
                         
                     inputQtd = cels[7].find_element(By.TAG_NAME, 'div').find_elements(By.TAG_NAME, 'div')[1].find_element(By.TAG_NAME, 'span').find_elements(By.TAG_NAME, 'input')
                     inputQtd[0].click()
                     inputQtd[0].clear()
-                    inputQtd[0].send_keys('2')
+                    inputQtd[0].send_keys(item)
                     
                     btsEdit[1].click()
-                    break
                 else:
-                    print("Guardar item na lista de não alocados")
-                    break
+                    nonUsedItem.append(cels[1].text)
                 
             navigator = self.driver.find_element(By.XPATH, "/html/body/div[@id='div_principal']/div[@id='div_principal']/div/span/form/div/div/div/div[1]/span[2]")
             navigator = navigator.find_elements(By.TAG_NAME, 'a')

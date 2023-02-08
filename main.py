@@ -1,8 +1,18 @@
 import openpyxl as opx
 import scraping
 
-filePrefeitura = input("Type your prefeitura file name and press Enter...")
-fileBranet = input("Type your Branet file name and press Enter...")
+print("\n\n\n------- Arquivo prefeitura -----")
+filePrefeitura = {
+    "fName": input("Digite o nome do arquivo: "),
+    "ixTabela": int(input("Digite o índice da tablea: ")),
+    "colunaCodCliente": int(input("Digite o índice da coluna que contenha o código do cliente: ")),
+    "colunaNomeCliente": int(input("Digite o índice da coluna que contenha o nome do cliente: ")),
+    "colunaQuantidade": int(input("Digite o índice da coluna que contenha a quantidade: ")),
+    "colunaUnidade": int(input("Digite o índice da coluna que contenha a unidade do item: "))
+}
+
+print("\n\n\n------- Arquivo Branet -----")
+fileBranet = input("Digite o nome do arquivo: ")
 
 navigator = scraping.ChromeDriver()
 
@@ -12,6 +22,6 @@ navigator.driver.get("https://juizdefora.branetlogistica.com.br/doms/processos/c
 
 input("Please, opens your modifiable catalog and press Enter...")
 
-navigator.itens()
+navigator.itens(fileBranet, filePrefeitura)
 
-# navigator.quitDriver()
+navigator.quitDriver()
