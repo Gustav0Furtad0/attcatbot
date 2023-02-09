@@ -47,8 +47,6 @@ class ChromeDriver:
                     else:
                         item["visited"] = False
                         return False
-                    
-                    
                 
             return False
                             
@@ -74,21 +72,32 @@ class ChromeDriver:
                 if cels[4].text.isdigit():
                     item = analyzeItem(cels[1].text, int(cels[4].text))
                     if item != False:
-                        btsEdit = cels[12].find_element(By.TAG_NAME, 'div').find_elements(By.TAG_NAME, 'a')
-                        btsEdit[0].click()
-                        
-                        inputQtd = cels[4].find_element(By.TAG_NAME, 'div').find_elements(By.TAG_NAME, 'div')[1].find_element(By.TAG_NAME, 'span').find_elements(By.TAG_NAME, 'input')
-                        inputQtd[0].click()
-                        inputQtd[0].clear()
-                        inputQtd[0].send_keys(item)
+                        ix = 0
+                        while True:
+                            try:
+                                btsEdit = cels[12].find_element(By.TAG_NAME, 'div').find_elements(By.TAG_NAME, 'a')
+                                btsEdit[0].click()
+                                
+                                inputQtd = cels[4].find_element(By.TAG_NAME, 'div').find_elements(By.TAG_NAME, 'div')[1].find_element(By.TAG_NAME, 'span').find_elements(By.TAG_NAME, 'input')
+                                inputQtd[0].click()
+                                inputQtd[0].clear()
+                                inputQtd[0].send_keys(item)
 
-                            
-                        inputQtd = cels[7].find_element(By.TAG_NAME, 'div').find_elements(By.TAG_NAME, 'div')[1].find_element(By.TAG_NAME, 'span').find_elements(By.TAG_NAME, 'input')
-                        inputQtd[0].click()
-                        inputQtd[0].clear()
-                        inputQtd[0].send_keys(item)
-                        
-                        btsEdit[1].click()
+                                    
+                                inputQtd = cels[7].find_element(By.TAG_NAME, 'div').find_elements(By.TAG_NAME, 'div')[1].find_element(By.TAG_NAME, 'span').find_elements(By.TAG_NAME, 'input')
+                                inputQtd[0].click()
+                                inputQtd[0].clear()
+                                inputQtd[0].send_keys(item)
+                                
+                                btsEdit[1].click()
+                                break
+                            except:
+                                ix += 1
+                                if ix == 5:
+                                    break
+                                else:
+                                    sleep(1)
+    
                     else:
                         nonVisitedSys.append([cels[1].text, cels[4].text])
                         
@@ -99,7 +108,7 @@ class ChromeDriver:
             navigator = navigator.find_elements(By.TAG_NAME, 'a')
             
         print("\n\nItens não visitados da prefeitura")
-        with open("example.txt", "w") as file:
+        with open("relatorio.txt", "w") as file:
             for i in dataPrefeitura:
                 file.write("Cod: " + str(i["codCliente"]) + " | Nome: " + i["nomeCliente"] + "\n")
                 print("Cod: " + str(i["codCliente"]) + " | Nome: " + i["nomeCliente"])
