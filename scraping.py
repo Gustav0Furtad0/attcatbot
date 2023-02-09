@@ -4,6 +4,14 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.select import Select
 from attcat import listaItens, catBranet
 
+RED   = "\033[1;31m"  
+BLUE  = "\033[1;34m"
+CYAN  = "\033[1;36m"
+GREEN = "\033[0;32m"
+RESET = "\033[0;0m"
+BOLD    = "\033[;1m"
+REVERSE = "\033[;7m"
+
 class ChromeDriver:
     options = webdriver.ChromeOptions()
     options.add_experimental_option('excludeSwitches', ['enable-logging'])
@@ -16,7 +24,7 @@ class ChromeDriver:
         log[1].send_keys(passwordin)
         btlogin = self.driver.find_element(By.XPATH, "/html/body/div/div/div/div/form/span/input")
         btlogin.click()
-        input("Press Enter when you logged...")
+        input("Pressione ENTER quando estiver logado no centro de custo desejado")
         
 
     def itens(self, branet, prefeitura):
@@ -34,8 +42,8 @@ class ChromeDriver:
             for item in dataPrefeitura:
 
                 if int(item["codCliente"]) == codItem:
-                    print("Nome sistema: " + name + "| Nome Prefeitura: " + item["nomeCliente"] + "\nQuantidade: " + str(qtd) + "| Quantidade e unidade Prefeitura: " + str(item["quantidade"]) + " " + item["unidade"])
-                    if input("Os itens acima são iguais ? (y/n) ") == 'y':
+                    print(CYAN + "Nome sistema: " + name + RESET + " | " + GREEN + "Nome Prefeitura: " + item["nomeCliente"] + CYAN + "\nQuantidade: " + str(qtd) + " | " + GREEN + "Quantidade e unidade Prefeitura: " + str(item["quantidade"]) + " " + item["unidade"] + RESET)
+                    if input(BOLD + "Os itens acima são iguais ? (y/n) " + RESET) == 'y':
                         return item["quantidade"]
 
                     else:
