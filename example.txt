@@ -1,0 +1,150 @@
+Cod: 465310336 | Nome: Aciclovir 200mg, comprimido   
+Cod: 465310048 | Nome: Aciclovir 50mg/g - pomada -  bisnaga com 10g
+Cod: 465311694 | Nome: Ácido Acetilsalicílico 100 mg, comprimido  
+Cod: 465310387 | Nome: Ácido fólico 5mg 
+Cod: 465310527 | Nome: Água bidestilada esterilizada - solução injetável - ampola com 10ml
+Cod: 465310758 | Nome: Água bidestilada esterilizada – solução injetável – frasco com 1000ml - SISTEMA FECHADO
+Cod: 465311857 | Nome: Albendazol 400mg, comprimidos mastigáveis
+Cod: 465310085 | Nome: Alendronato de sódio 70mg, comprimido 
+Cod: 465310256 | Nome: Alopurinol 100mg, comprimido 
+Cod: 465310611 | Nome: Aminofilina 100mg, comprimido  
+
+Cod: 465310103 | Nome: Aminofilina 24mg/ml - solução injetável - ampola com 10ml
+Cod: 465310138 | Nome: Amiodarona, Cloridrato 200mg, comprimido 
+Cod: 465310106 | Nome: Cloridrato de Amitriptilina, 25mg, comprimido 
+Cod: 465310038 | Nome: Amoxicilina 500mg, comprimido revestido ou cápsula, em blister
+Cod: 465310050 | Nome: Amoxicilina 500mg + clavulanato de potássio 125mg, comprimido
+Cod: 465310872 | Nome: Amoxicilina 50mg/ml (250mg/5ml), pó para suspensão oral, frasco com 60ml, com dosador graduado
+Cod: 465313113 | Nome: Amoxicilina 50mg/ml + Clavulanato de potássio 12,5g/ml - solução oral - frasco com 75ml
+Cod: 465311044 | Nome: Anlodipino, besilato 5mg, comprimido 
+Cod: 465310488 | Nome: Atenolol 50mg
+Cod: 465310100 | Nome: Atropina, Sulfato  0,25mg/ml - solução injetável - ampola com 1ml 
+Cod: 465310493 | Nome: Azitromicina (diidratada) 600mg (40mg/mL) - solução oral - frasco com  15ml
+Cod: 465310898 | Nome: Azitromicina 500mg, comprimido
+Cod: 465311601 | Nome: Beclometasona (dipropionato) 200mcg/dose - spray oral - frasco com 200 doses
+Cod: 465310633 | Nome: Beclometasona (dipropionato) 50mcg/dose – spray nasal - frasco com 200 doses
+Cod: 465310634 | Nome: Dipropionato de Beclometasona, 50mcg, spray oral,  frasco com 200 doses
+Cod: 465310886 | Nome: Benzalcônio, cloreto  0,1mg/ml + cloreto de sódio 9mg/ml - solução nasal - frasco com 30mL
+Cod: 465311152 | Nome: Brometo de N-Butilescopolamina, 10mg, Comprimido ou Drágea
+Cod: 465310045 | Nome: Brometo n-butilescopolamina 20mg/ml  - solução injetável - ampola com 1ml 
+Cod: 465310638 | Nome: Bromoprida 10mg, Comprimido
+Cod: 465310378 | Nome: Bromoprida 4mg/ml - solução oral - frasco com 20ml
+Cod: 465310333 | Nome: Bromoprida 10mg, solução injetável, ampola com 2ml
+Cod: 465310253 | Nome: Captopril 25mg, comprimido 
+Cod: 465310368 | Nome: Carbonato de Cálcio 1250mg (equivalente a 500mg de cálcio elementar), comprimidos
+Cod: 465310569 | Nome: Carvedilol 12,5mg, comprimido.
+Cod: 465310856 | Nome: Carvedilol 3,125mg, comprimido
+Cod: 465310140 | Nome: Cefalexina 500mg, comprimido ou cápsula em blister
+Cod: 465310242 | Nome: Cefalexina 50mg/ml - solução oral - frasco com 100ml
+Cod: 465310232 | Nome: Cetoconazol 20mg/g, creme dermatológico, tubo com 30g
+Cod: 465310950 | Nome: Cloridrato de Ciprofloxacino 500mg, comprimido
+Cod: 465310080 | Nome: Ciproterona, Acetato 2mg + etinilestradiol 0,035mg - cartela com 21 drágeas (CARTELA)
+Cod: 465310375 | Nome: Claritromicina 500mg, comprimido.
+Cod: 465310265 | Nome: Cloridrato Clonidina 0,15mg
+Cod: 465310009 | Nome: Clotrimazol 10mg/g (1%), Creme Vaginal, Bisnaga com 35g + Aplicador
+Cod: 465310610 | Nome: Acetato de dexametasona 0,1%, creme, bisnaga c/ 10g
+Cod: 465312042 | Nome: Dexametasona, fosfato de, 2mg/ml - solução Injetável - ampola com 1ml 
+Cod: 465310249 | Nome: Maleato de Dexclorfeniramina 2mg, comprimido
+Cod: 465311650 | Nome: Dexclorfeniramina, 0,4mg/ml, xarope, frasco c/ 100ml
+Cod: 465310127 | Nome: Diazepan 10mg
+Cod: 465310137 | Nome: Diazepan 10mg/2ml, solução injetável, ampola com 2ml
+Cod: 465310873 | Nome: Diclofenaco potássico 50mg, comprimido
+Cod: 465310181 | Nome: Diclofenaco de sódio 25mg/ml (75mg/3ml) - solução injetável - ampola com  3ml 
+Cod: 465310245 | Nome: Digoxina 0,25mg
+Cod: 465310128 | Nome: Dipirona Sódica 500mg, Comprimido
+Cod: 465312027 | Nome: Dipirona 500mg/ml - solução injetável - ampola com 2ml 
+Cod: 465310836 | Nome: Dipirona sódica 500mg/ml - solução oral - frasco conta gotas com 10ml
+Cod: 465310180 | Nome: Cloridrato de Doxiciclina 100mg
+Cod: 465311620 | Nome: Maleato de Enalapril 20mg
+Cod: 465310349 | Nome: Cloridrato de Epinefrina 1mg/ml, (Adrenalina), solução injetável, ampola c/ 1ml
+Cod: 465310567 | Nome: Espironolactona 25mg, comprimido
+Cod: 465310906 | Nome: Etinilestradiol 0,03 mg + levonorgestrel 0,15 mg - 21 cpd
+Cod: 465310353 | Nome: Fenobarbital 100mg
+Cod: 465310389 | Nome: Fenobarbital 100mg/ml, ( 200mg/2ml) solução injetável, ampola com 2ml
+Cod: 465310388 | Nome: Fenobarbital 40mg/ml (4%) - solução oral - frasco conta gotas com 20ml
+Cod: 465310497 | Nome: Fenoterol, Bromidrato  5mg/ml - solução para nebulização - frasco com 20ml com gotejador - uso inalatório
+Cod: 465310663 | Nome: Fluconazol 150mg, Cápsula
+Cod: 465310135 | Nome: Fluoxetina, cloridrato 20mg cápsula/comprimido
+Cod: 465310704 | Nome: Furosemida 10mg/ml, (20mg/2ml) solução injetável, ampola com 2ml
+Cod: 465310584 | Nome: Furosemida 40mg, comprimido.
+Cod: 465312036 | Nome: Gestodeno 0,075mg + etinilestradiol 0,03mg - cartela com 21 comprimidos (AT BÁSICA - CARTELA)
+Cod: 465310717 | Nome: Glibenclamida 5mg, comprimido.
+Cod: 465310092 | Nome: Gliclazida 30mg, Comprimido de Liberação Modificada
+Cod: 465310859 | Nome: Glicose 50% - solução injetável - ampola com 10ml 
+Cod: 465310432 | Nome: Glimepirida 2mg
+Cod: 465310156 | Nome: Hidralazina, Cloridrato 25mg 
+Cod: 465310566 | Nome: Hidroclorotiazida 25mg
+Cod: 465311915 | Nome: Hidrocortisona, Hemisuccinato 100mg - pó liofilizado para solução injetável 
+Cod: 465311916 | Nome: Hidrocortisona, Hemisuccinato 500mg - pó liofilizado para solução injetável 
+Cod: 465310674 | Nome: Hidróxido de Alumínio + Hidróxido de Magnésio + Dimeticona, conter no mínimo: Hidróxido de alumínio 37mg/ml + Hidróxido de magnésio 30mg/ml + dimeticona 3mg/ml - suspensão oral - frasco com 240ml
+Cod: 465310070 | Nome: Ibuprofeno 100mg/ml, Suspensão Oral, Gotas, frasco com 20ml.
+Cod: 465313104 | Nome: Ibuprofeno 600mg
+Cod: 465311382 | Nome: Insulina Humana NPH 100UI/ml, Suspensão Injetável, Frasco com 10ml
+Cod: 465310402 | Nome: Insulina regular humana 100 UI/ml, suspensão injetável, frasco com 10ml
+Cod: 465311755 | Nome: Insulina Humana NPH 100 UI/ML, Suspensão Injetável 
+Cod: 465311754 | Nome: Insulina Humana Regular 100 UI/ML, Solução Injetável 
+Cod: 465210219 | Nome: Agulha para Caneta aplicadora de insulina caixa com 100 unidades. 
+Cod: 465310756 | Nome: Brometo de Ipratrópio 0,25mg, solução para nebulização, frasco com 20ml com gotejador, uso inalatório
+Cod: 465310266 | Nome: Isossorbida, Dinitrato 10mg
+Cod: 465311203 | Nome: Mononitrato de Isossorbida 40mg, Comprimidos
+Cod: 465311780 | Nome: Ivermectina de 6mg, Comprimido
+Cod: 465310651 | Nome: Carbidopa 25mg + Levodopa 250mg, comprimido
+Cod: 465311017 | Nome: Levodopa 200mg + Benserazida 50mg, comprimido
+Cod: 465312037 | Nome: Levonorgestrel 0,75mg, comprimido
+Cod: 465310132 | Nome: Levotiroxina 25mcg, comprimido
+Cod: 465310771 | Nome: Levotiroxina Sódica 50mcg, Comprimidos
+Cod: 465311777 | Nome: Lidocaína cloridrato, dosagem: 2%, apresentação: geléia
+Cod: 465310831 | Nome: Loratadina 10mg
+Cod: 465310471 | Nome: Loratadina 1mg/ml - solução oral (xarope) - frasco com 100ml
+Cod: 465310407 | Nome: Losartan, potássico 50mg
+Cod: 465310874 | Nome: Mebendazol 100mg, comprimido
+Cod: 465310367 | Nome: Medroxiprogesterona, Acetato 150mg/ml - solução injetável - ampola com 1ml
+Cod: 465310667 | Nome: Metformina 850mg 
+Cod: 465310037 | Nome: Metildopa 250mg, comprimidos
+Cod: 465310710 | Nome: Metoclopramida, Cloridrato de, 10mg, comprimido
+Cod: 465310711 | Nome: Metoclopramida, Cloridrato de 4mg/ml, solução oral, frasco conta gotas com 10ml
+Cod: 465310001 | Nome: Metoclopramida, Cloridrato de 5mg/ml, (10mg/2ml) solução injetável, ampola com 2ml
+Cod: 465311628 | Nome: Metoprolol Succinato 50mg - liberação controlada
+Cod: 465310876 | Nome: Metronidazol 100mg/g - geléia vaginal - bisnaga com 50g + aplicador
+Cod: 465310755 | Nome: Metronidazol 250mg, comprimido.
+Cod: 465310877 | Nome: Miconazol, Nitrato de, 2% (20mg/ml), Creme Vaginal, Bisnaga 80g, c/ aplicador 
+Cod: 465310413 | Nome: Neomicina 5mg/g + Bacitracina 250UI/g, Pomada, Bisnaga com 10g.
+Cod: 465310693 | Nome: Nifedipina 20mg, com liberação retardada, comprimido
+Cod: 465310621 | Nome: Nistatina 100.000UI/ml - suspensão oral - frasco com 50ml
+Cod: 465310502 | Nome: Nitrofurantoina, 100mg, comprimido ou cápsula em blister
+Cod: 465310622 | Nome: Noretisterona 0,35 mg - cartela com 35 cpd
+Cod: 465310329 | Nome: Enantato de Norestisterona 50mg/ml + valerato estradiol 5mg/ml, solução injetável, seringa com 1ml
+Cod: 465310433 | Nome: Omeprazol 20mg 
+Cod: 465310787 | Nome: Paracetamol 200mg/ml - solução oral - frasco conta gotas com 15ml 
+Cod: 465310879 | Nome: Paracetamol 500mg, comprimido
+Cod: 465310623 | Nome: Penicilina g benzatina 1200.000UI - pó liofilizado para solução injetável
+Cod: 465310625 | Nome: Penicilina g benzatina 600.000UI - pó liofilizado para suspensão injetável
+Cod: 465313118 | Nome: Penicilina procaina + penicilina potassica 300.000UI + 100.000UI  - pó liofilizado para suspensão injetável
+Cod: 465311965 | Nome: Permetrina 5% - loção tópica - frasco com 60mL.
+Cod: 465310692 | Nome: Polivitamínico, contendo no mínimo: Vitamina B1 + Vitamina B2 + Vitamina B6 + Vitamina B12  + Nicotinamida + Vitamina B5  + Ácido Ascórbico (Vitamina C) + Vitamina E + Zinco
+Cod: 465311695 | Nome: Polivitamínico solução oral, contendo no mínimo Vit. A + Vit. B1+ Vit. B2 + Vit. B5 + Vit. B6 + Vit. B8 + Vit. C+ Vit. D+ Vit. E, frasco com 20ml
+Cod: 465311078 | Nome: Prednisolona 3mg/mL - solução oral - frasco com 100mL.
+Cod: 465310748 | Nome: Prednisona 20mg 
+Cod: 465310644 | Nome: Prednisona 5mg, Comprimido.
+Cod: 465311989 | Nome: Prometazina, Cloridrato 25mg/ml  (50mg/2ml) - solução injetável - ampola com 2ml 
+Cod: 465310700 | Nome: Cloridrato de Propranolol 40mg, Comprimido
+Cod: 465310571 | Nome: Ranitidina, Cloridrato 25mg/ml (50mg/2ml)- solução injetável - ampola com 2ml 
+Cod: 465310084 | Nome: Ranitidina, cloridrato 150mg 
+Cod: 465310052 | Nome: Sais para reidratacao oral - com associacao de cloreto potassio e sodio + citrato sodio + glicose - sachê com 27,9g
+Cod: 465310541 | Nome: Salbutamol micronizado 100mcg/dose - aerossol - 200 doses
+Cod: 465310884 | Nome: Salbutamol, sulfato 0,4mg/ml - solução oral (xarope) - frasco com 120ml 
+Cod: 465311642 | Nome: Sinvastatina 10mg, comprimidos
+Cod: 465311119 | Nome: Sinvastatina 20mg, comprimidos
+Cod: 465310188 | Nome: Soro Fisiológico à 0,9%, (NaCl), uso IntraVenoso, Sistema Fechado, frasco ou bolsa com 500ml
+Cod: 465310089 | Nome: Soro Glicosado à 5%, uso IntraVenoso, Sistema Fechado, Frasco ou bolsa com 500ml
+Cod: 465310002 | Nome: Sulfadiazina de prata 1% - pomada ou creme - bisnaga com 100G
+Cod: 465310887 | Nome: Sulfadiazina de prata 1% - pomada ou creme - pote com 400g 
+Cod: 465310889 | Nome: Sulfametaxazol 400mg + trimetropina 80mg, comprimido
+Cod: 465310935 | Nome: Sulfametoxazol 40mg/ml + Trimetropina 8mg/ml - suspensão oral - frasco com 50ml
+Cod: 465310921 | Nome: Sulfato Ferroso 125mg/mL, equivalente a 25mg de ferro – solução oral – frasco conta gotas com 30mL
+Cod: 465310922 | Nome: Sulfato Ferroso equivalente a 40mg de ferro, comprimido revestido
+Cod: 465310175 | Nome: Tobramicina 0,3% - solução oftálmica - frasco conta gotas com 5ml
+Cod: 465311439 | Nome: Varfarina sódica 5mg 
+Cod: 465310396 | Nome: Cloridrato de Verapamil, 80mg, comprimido
+Cod: 465310934 | Nome: Vitamina B1 (Tiamina, cloridrato) 300mg, comprimido
+Cod: 465310708 | Nome: Vitamina K (Fitometadiona) 10mg/ml - solução injetável - ampola com 1ml

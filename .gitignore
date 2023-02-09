@@ -2,3 +2,7 @@
 chromedriver.exe
 catalogbra.xlsx
 itensBranetJF.xlsx
+/dist
+/.vscode
+exec.bat
+dist.rar

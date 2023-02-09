@@ -1,50 +1,50 @@
 import scraping
 import os
 import openpyxl as opx
-from colorama import Fore, Style
+from colorama import Fore, Style, Back, init
 
-RED   = "\033[1;31m"  
-BLUE  = "\033[1;34m"
-CYAN  = "\033[1;36m"
-GREEN = "\033[0;32m"
-RESET = "\033[0;0m"
-BOLD    = "\033[;1m"
-REVERSE = "\033[;7m"
+init()
 
 filePrefeitura = {}
 fileBranet = ""
-
-
     
 while True:
 
-    print(BOLD + "\n\n\n------- Arquivo prefeitura -----" + RESET)
-    filePrefeitura = {
-        "fName": input("Digite o nome do arquivo: "),
-        "ixTabela": int(input("Digite o índice da tablea: ")),
-        "colunaCodCliente": int(input("Digite o índice da coluna que contenha o código do cliente: ")),
-        "colunaNomeCliente": int(input("Digite o índice da coluna que contenha o nome do cliente: ")),
-        "colunaQuantidade": int(input("Digite o índice da coluna que contenha a quantidade: ")),
-        "colunaUnidade": int(input("Digite o índice da coluna que contenha a unidade do item: "))
-    }
+    while True:
+        try:
+            print("\n\n\n" + Back.WHITE + Fore.BLACK + "------- Arquivo prefeitura -----" + Style.RESET_ALL)
+            filePrefeitura = {
+                "fName": input("Digite o nome do arquivo: "),
+                "ixTabela": int(input("Digite o índice da tabela: ")),
+                "colunaCodCliente": int(input("Digite o índice da coluna que contenha o código do cliente: ")),
+                "colunaNomeCliente": int(input("Digite o índice da coluna que contenha o nome do cliente: ")),
+                "colunaUnidade": int(input("Digite o índice da coluna que contenha a unidade do item: ")),
+                "colunaQuantidade": int(input("Digite o índice da coluna que contenha a quantidade: "))
+            }
 
-    print(BOLD + "\n\n\n------- Arquivo Branet -----" + RESET)
-    fileBranet = input("Digite o nome do arquivo: ")
+            print("\n\n\n" + Back.WHITE + Fore.BLACK + "------- Arquivo Branet -----" + Style.RESET_ALL)
+            fileBranet = input("Digite o nome do arquivo: ")
+            break
+        
+        except:
+            print("Digite somente dados válidos...")
 
     if not (os.path.isfile(filePrefeitura["fName"]) or os.path.isfile(fileBranet)):
-        print(RED + "Arquivo não encontrado, tente novamente..." + RESET)
+        print(Fore.RED + "Arquivo não encontrado, tente novamente..." + Style.RESET_ALL)
     else:
-        print("Até que entrei no else")
-        catologo = opx.load_workbook(filename=filePrefeitura["fName"])
-        tabelaEscolha = catologo[catologo.sheetnames[filePrefeitura["ixTabela"]]]
-        nomeUnidade = tabelaEscolha.cell(row=2, column=filePrefeitura["colunaQuantidade"]).value
-        print(BOLD + "A unidade que deseja alterar o catálogo é " + nomeUnidade + "? (y/n) " + RESET)
-        tacerto = input()
-        if tacerto == "y":
-            break
-        else:
-            print(RED + 'Por favor, digite novamente os dados...' + RESET)
-        
+        try:
+            catologo = opx.load_workbook(filename=filePrefeitura["fName"])
+            cat = opx.load_workbook(filename=fileBranet)
+            tabelaEscolha = catologo[catologo.sheetnames[filePrefeitura["ixTabela"]]]
+            nomeUnidade = tabelaEscolha.cell(row=2, column=filePrefeitura["colunaQuantidade"]).value
+            print("A unidade que deseja alterar o catálogo é " + Fore.GREEN + nomeUnidade.lstrip(" ") + Style.RESET_ALL + "? (y/n) ")
+            tacerto = input()
+            if tacerto == "y":
+                break
+            else:
+                print(Fore.RED + 'Por favor, digite novamente os dados...' + Style.RESET_ALL)
+        except:
+            print(Fore.RED + "Arquivo não encontrado, tente novamente..." + Style.RESET_ALL)
 
 
 navigator = scraping.ChromeDriver()
@@ -53,8 +53,6 @@ navigator.logaSistema('suportejf01', '123456789')
 
 navigator.driver.get("https://juizdefora.branetlogistica.com.br/doms/processos/catalogo.xhtml")
 
-input(BOLD + "Please, opens your modifiable catalog and press Enter..." + RESET)
+input("Entre no catálogo que deseja fazer a modificações e pressione ENTER")
 
 navigator.itens(fileBranet, filePrefeitura)
-
-navigator.quitDriver()
