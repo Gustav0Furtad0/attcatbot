@@ -12,7 +12,7 @@ while True:
 
     while True:
         try:
-            print("\n\n\n" + Back.WHITE + Fore.BLACK + "------- Arquivo prefeitura -----" + Style.RESET_ALL)
+            print("\n\n\n" + Back.WHITE + Fore.BLACK + "------- Arquivo prefeitura -------" + Style.RESET_ALL)
             filePrefeitura = {
                 "fName": input("Digite o nome do arquivo: "),
                 "ixTabela": int(input("Digite o índice da tabela: ")),
@@ -22,7 +22,7 @@ while True:
                 "colunaQuantidade": int(input("Digite o índice da coluna que contenha a quantidade: "))
             }
 
-            print("\n\n\n" + Back.WHITE + Fore.BLACK + "------- Arquivo Branet -----" + Style.RESET_ALL)
+            print("\n\n\n" + Back.WHITE + Fore.BLACK + "------- Arquivo Branet -------" + Style.RESET_ALL)
             fileBranet = input("Digite o nome do arquivo: ")
             break
         

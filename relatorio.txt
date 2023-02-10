@@ -2,5 +2,7 @@ Cod: 465310638 | Nome: Bromoprida 10mg, Comprimido
 Cod: 465310610 | Nome: Acetato de dexametasona 0,1%, creme, bisnaga c/ 10g
 Cod: 465310135 | Nome: Fluoxetina, cloridrato 20mg cápsula/comprimido
 Cod: 465311915 | Nome: Hidrocortisona, Hemisuccinato 100mg - pó liofilizado para solução injetável 
+Cod: 465311755 | Nome: Insulina Humana NPH 100 UI/ML, Suspensão Injetável 
+Cod: 465311754 | Nome: Insulina Humana Regular 100 UI/ML, Solução Injetável 
 Cod: 465210219 | Nome: Agulha para Caneta aplicadora de insulina caixa com 100 unidades. 
 Cod: 465310541 | Nome: Salbutamol micronizado 100mcg/dose - aerossol - 200 doses

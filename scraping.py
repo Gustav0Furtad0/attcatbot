@@ -23,19 +23,21 @@ class ChromeDriver:
     def itens(self, branet, prefeitura):
         dataBranet = catBranet(branet);
         dataPrefeitura = listaItens(prefeitura["fName"], prefeitura["colunaQuantidade"], prefeitura["ixTabela"], prefeitura["colunaNomeCliente"], prefeitura["colunaUnidade"], prefeitura["colunaCodCliente"]);
+        dif = False
         p = False
-        if input("Letra inicial? (s/n)") == 's':
-            while True:
-                p = input("Letra: ")
-                p.lstrip(" ").lstrip("\n")
-                if len(p) == 1 and p.isalpha() and p:
-                    break
-                else:
-                    print("Digite uma letra válida!")
+        if input("Gerar somente relatório de diferença? (y/n) ") == 'y':
+            dif = True
+        else:
+            if input("Letra inicial (lembrando que esta opção não gera o relatório no final)? (y/n) ") == 'y':
+                while True:
+                    p = input("Letra: ")
+                    p.lstrip(" ").lstrip("\n")
+                    if len(p) == 1 and p.isalpha() and p:
+                        break
+                    else:
+                        print("Digite uma letra válida!")
             
-        nonVisitedSys = []
-        
-        def analyzeItem(name, qtd):
+        def analyzeItem(name, qtd, dif=False):
             codItem = 0;
             for item in dataBranet:
                 if not (item["codCliente"] is None):
@@ -46,16 +48,19 @@ class ChromeDriver:
             
             for item in dataPrefeitura:
                 if int(item["codCliente"]) == codItem:
-                    print("Analisando item: " + name)
-                    sleep(1.5)
-                    print(Fore.CYAN + "Nome sistema: " + name + Style.RESET_ALL + " | " + Fore.GREEN + "Nome Prefeitura: " + item["nomeCliente"] + Fore.CYAN + "\nQuantidade: " + str(qtd) + Style.RESET_ALL +" | " + Fore.GREEN + "Quantidade e unidade Prefeitura: " + str(item["quantidade"]) + " " + item["unidade"] + Style.RESET_ALL)
-                    if input("Os itens acima são iguais ? (y/n) ") == 'y':
-                        dataPrefeitura.remove(item)
-                        print("")
-                        return item["quantidade"]
+                    if dif == False:
+                        print("Analisando item: " + name)
+                        sleep(1.5)
+                        print(Fore.CYAN + "Nome sistema: " + name + Style.RESET_ALL + " | " + Fore.GREEN + "Nome Prefeitura: " + item["nomeCliente"] + Fore.CYAN + "\nQuantidade: " + str(qtd) + Style.RESET_ALL +" | " + Fore.GREEN + "Quantidade e unidade Prefeitura: " + str(item["quantidade"]) + " " + item["unidade"] + Style.RESET_ALL)
+                        if input("Os itens acima são iguais ? (y/n) ") == 'y':
+                            dataPrefeitura.remove(item)
+                            print("")
+                            return item["quantidade"]
+                        else:
+                            item["visited"] = False
+                            return False
                     else:
-                        item["visited"] = False
-                        return False
+                        dataPrefeitura.remove(item)
                 
             return False
                             
@@ -68,8 +73,6 @@ class ChromeDriver:
         navigator = self.driver.find_element(By.XPATH, "/html/body/div[@id='div_principal']/div[@id='div_principal']/div/span/form/div/div/div/div[1]/span[2]")
         navigator = navigator.find_elements(By.TAG_NAME, 'a')
         
-        achou = False
-        
         for i in range(len(navigator)):
             if i != 0:
                 navigator[i].click();
@@ -80,43 +83,12 @@ class ChromeDriver:
             for row in rows:
                 cels = row.find_elements(By.TAG_NAME, 'td')
                 item = 0
-                if p == False:
-                    if cels[4].text.isdigit():
-                        item = analyzeItem(cels[1].text, int(cels[4].text))
-                        if item != False:
-                            ix = 0
-                            while True:
-                                try:
-                                    btsEdit = cels[12].find_element(By.TAG_NAME, 'div').find_elements(By.TAG_NAME, 'a')
-                                    btsEdit[0].click()
-                                    
-                                    inputQtd = cels[4].find_element(By.TAG_NAME, 'div').find_elements(By.TAG_NAME, 'div')[1].find_element(By.TAG_NAME, 'span').find_elements(By.TAG_NAME, 'input')
-                                    inputQtd[0].click()
-                                    inputQtd[0].clear()
-                                    inputQtd[0].send_keys(item)
-
-                                        
-                                    inputQtd = cels[7].find_element(By.TAG_NAME, 'div').find_elements(By.TAG_NAME, 'div')[1].find_element(By.TAG_NAME, 'span').find_elements(By.TAG_NAME, 'input')
-                                    inputQtd[0].click()
-                                    inputQtd[0].clear()
-                                    inputQtd[0].send_keys(item)
-                                    
-                                    btsEdit[1].click()
-                                    break
-                                except:
-                                    ix += 1
-                                    if ix == 5:
-                                        break
-                                    else:
-                                        sleep(1)
-                    
-                else:
-                    if cels[4].text.isdigit():
-                        item = analyzeItem(cels[1].text, int(cels[4].text))
-                        if item != False:
-                            if cels[1].text[0].lower() == p.lower():
+                if dif == False:
+                    if p == False:
+                        if cels[4].text.isdigit():
+                            item = analyzeItem(cels[1].text, int(cels[4].text))
+                            if item != False:
                                 ix = 0
-                                p = False
                                 while True:
                                     try:
                                         btsEdit = cels[12].find_element(By.TAG_NAME, 'div').find_elements(By.TAG_NAME, 'a')
@@ -135,22 +107,35 @@ class ChromeDriver:
                                         
                                         btsEdit[1].click()
                                         break
+                                    
                                     except:
                                         ix += 1
                                         if ix == 5:
                                             break
                                         else:
                                             sleep(1)
-                    
+                        
+                    else:
+                        if cels[4].text.isdigit():
+                            if cels[1].text[0].lower() == p.lower():
+                                ix = 0
+                                p = False
+                                
+                else:
+                    if cels[4].text.isdigit():
+                        item = analyzeItem(cels[1].text, int(cels[4].text), dif=True)
                 
             navigator = self.driver.find_element(By.XPATH, "/html/body/div[@id='div_principal']/div[@id='div_principal']/div/span/form/div/div/div/div[1]/span[2]")
             navigator = navigator.find_elements(By.TAG_NAME, 'a')
-            
-        print("\n\nItens não visitados da prefeitura")
-        with open("relatorio.txt", "w") as file:
-            for i in dataPrefeitura:
-                file.write("Cod: " + str(i["codCliente"]) + " | Nome: " + i["nomeCliente"] + "\n")
-                print("Cod: " + str(i["codCliente"]) + " | Nome: " + i["nomeCliente"])
+        
+        if p == False:
+            print("\n\nItens não visitados da prefeitura")
+            with open("relatorio.txt", "w") as file:
+                for i in dataPrefeitura:
+                    file.write("Cod: " + str(i["codCliente"]) + " | Nome: " + i["nomeCliente"] + "\n")
+                    print("Cod: " + str(i["codCliente"]) + " | Nome: " + i["nomeCliente"])
+        else:
+            print("Gere o relatório de diferença para corrigir os itens!")
             
         print("FIM DA TAREFA")
             
