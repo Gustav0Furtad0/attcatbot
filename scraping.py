@@ -3,7 +3,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.select import Select
 from attcat import listaItens, catBranet
-from colorama import Fore, Style, Back, init
+from colorama import Fore, Style
 
 class ChromeDriver:
     options = webdriver.ChromeOptions()
@@ -23,7 +23,16 @@ class ChromeDriver:
     def itens(self, branet, prefeitura):
         dataBranet = catBranet(branet);
         dataPrefeitura = listaItens(prefeitura["fName"], prefeitura["colunaQuantidade"], prefeitura["ixTabela"], prefeitura["colunaNomeCliente"], prefeitura["colunaUnidade"], prefeitura["colunaCodCliente"]);
-        
+        p = False
+        if input("Letra inicial? (s/n)") == 's':
+            while True:
+                p = input("Letra: ")
+                p.lstrip(" ").lstrip("\n")
+                if len(p) == 1 and p.isalpha() and p:
+                    break
+                else:
+                    print("Digite uma letra válida!")
+            
         nonVisitedSys = []
         
         def analyzeItem(name, qtd):
@@ -59,6 +68,8 @@ class ChromeDriver:
         navigator = self.driver.find_element(By.XPATH, "/html/body/div[@id='div_principal']/div[@id='div_principal']/div/span/form/div/div/div/div[1]/span[2]")
         navigator = navigator.find_elements(By.TAG_NAME, 'a')
         
+        achou = False
+        
         for i in range(len(navigator)):
             if i != 0:
                 navigator[i].click();
@@ -69,40 +80,68 @@ class ChromeDriver:
             for row in rows:
                 cels = row.find_elements(By.TAG_NAME, 'td')
                 item = 0
-                if cels[4].text.isdigit():
-                    item = analyzeItem(cels[1].text, int(cels[4].text))
-                    if item != False:
-                        ix = 0
-                        while True:
-                            try:
-                                btsEdit = cels[12].find_element(By.TAG_NAME, 'div').find_elements(By.TAG_NAME, 'a')
-                                btsEdit[0].click()
-                                
-                                inputQtd = cels[4].find_element(By.TAG_NAME, 'div').find_elements(By.TAG_NAME, 'div')[1].find_element(By.TAG_NAME, 'span').find_elements(By.TAG_NAME, 'input')
-                                inputQtd[0].click()
-                                inputQtd[0].clear()
-                                inputQtd[0].send_keys(item)
-
+                if p == False:
+                    if cels[4].text.isdigit():
+                        item = analyzeItem(cels[1].text, int(cels[4].text))
+                        if item != False:
+                            ix = 0
+                            while True:
+                                try:
+                                    btsEdit = cels[12].find_element(By.TAG_NAME, 'div').find_elements(By.TAG_NAME, 'a')
+                                    btsEdit[0].click()
                                     
-                                inputQtd = cels[7].find_element(By.TAG_NAME, 'div').find_elements(By.TAG_NAME, 'div')[1].find_element(By.TAG_NAME, 'span').find_elements(By.TAG_NAME, 'input')
-                                inputQtd[0].click()
-                                inputQtd[0].clear()
-                                inputQtd[0].send_keys(item)
-                                
-                                btsEdit[1].click()
-                                break
-                            except:
-                                ix += 1
-                                if ix == 5:
+                                    inputQtd = cels[4].find_element(By.TAG_NAME, 'div').find_elements(By.TAG_NAME, 'div')[1].find_element(By.TAG_NAME, 'span').find_elements(By.TAG_NAME, 'input')
+                                    inputQtd[0].click()
+                                    inputQtd[0].clear()
+                                    inputQtd[0].send_keys(item)
+
+                                        
+                                    inputQtd = cels[7].find_element(By.TAG_NAME, 'div').find_elements(By.TAG_NAME, 'div')[1].find_element(By.TAG_NAME, 'span').find_elements(By.TAG_NAME, 'input')
+                                    inputQtd[0].click()
+                                    inputQtd[0].clear()
+                                    inputQtd[0].send_keys(item)
+                                    
+                                    btsEdit[1].click()
                                     break
-                                else:
-                                    sleep(1)
-    
-                    else:
-                        nonVisitedSys.append([cels[1].text, cels[4].text])
-                        
+                                except:
+                                    ix += 1
+                                    if ix == 5:
+                                        break
+                                    else:
+                                        sleep(1)
+                    
                 else:
-                    nonVisitedSys.append([cels[1].text, cels[4].text])
+                    if cels[4].text.isdigit():
+                        item = analyzeItem(cels[1].text, int(cels[4].text))
+                        if item != False:
+                            if cels[1].text[0].lower() == p.lower():
+                                ix = 0
+                                p = False
+                                while True:
+                                    try:
+                                        btsEdit = cels[12].find_element(By.TAG_NAME, 'div').find_elements(By.TAG_NAME, 'a')
+                                        btsEdit[0].click()
+                                        
+                                        inputQtd = cels[4].find_element(By.TAG_NAME, 'div').find_elements(By.TAG_NAME, 'div')[1].find_element(By.TAG_NAME, 'span').find_elements(By.TAG_NAME, 'input')
+                                        inputQtd[0].click()
+                                        inputQtd[0].clear()
+                                        inputQtd[0].send_keys(item)
+
+                                            
+                                        inputQtd = cels[7].find_element(By.TAG_NAME, 'div').find_elements(By.TAG_NAME, 'div')[1].find_element(By.TAG_NAME, 'span').find_elements(By.TAG_NAME, 'input')
+                                        inputQtd[0].click()
+                                        inputQtd[0].clear()
+                                        inputQtd[0].send_keys(item)
+                                        
+                                        btsEdit[1].click()
+                                        break
+                                    except:
+                                        ix += 1
+                                        if ix == 5:
+                                            break
+                                        else:
+                                            sleep(1)
+                    
                 
             navigator = self.driver.find_element(By.XPATH, "/html/body/div[@id='div_principal']/div[@id='div_principal']/div/span/form/div/div/div/div[1]/span[2]")
             navigator = navigator.find_elements(By.TAG_NAME, 'a')
