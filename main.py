@@ -7,7 +7,8 @@ init()
 
 filePrefeitura = {}
 fileBranet = ""
-    
+nomeUnidade = ""
+
 while True:
 
     while True:
@@ -40,6 +41,7 @@ while True:
             print("A unidade que deseja alterar o catálogo é " + Fore.GREEN + nomeUnidade.lstrip(" ") + Style.RESET_ALL + "? (y/n) ")
             tacerto = input()
             if tacerto == "y":
+                nomeUnidade = nomeUnidade.lstrip(" ").replace(" ", "-").lower()
                 break
             else:
                 print(Fore.RED + 'Por favor, digite novamente os dados...' + Style.RESET_ALL)
@@ -55,4 +57,4 @@ navigator.driver.get("https://juizdefora.branetlogistica.com.br/doms/processos/c
 
 input("Entre no catálogo que deseja fazer a modificações e pressione ENTER")
 
-navigator.itens(fileBranet, filePrefeitura)
+navigator.itens(fileBranet, filePrefeitura, nomeUnidade)

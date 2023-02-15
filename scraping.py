@@ -20,7 +20,7 @@ class ChromeDriver:
         input("Pressione ENTER quando estiver logado no centro de custo desejado")
         
 
-    def itens(self, branet, prefeitura):
+    def itens(self, branet, prefeitura, unidade):
         dataBranet = catBranet(branet);
         dataPrefeitura = listaItens(prefeitura["fName"], prefeitura["colunaQuantidade"], prefeitura["ixTabela"], prefeitura["colunaNomeCliente"], prefeitura["colunaUnidade"], prefeitura["colunaCodCliente"]);
         dif = False
@@ -50,17 +50,25 @@ class ChromeDriver:
                 if int(item["codCliente"]) == codItem:
                     if dif == False:
                         print("Analisando item: " + name)
-                        sleep(1.5)
+                        sleep(2)
                         print(Fore.CYAN + "Nome sistema: " + name + Style.RESET_ALL + " | " + Fore.GREEN + "Nome Prefeitura: " + item["nomeCliente"] + Fore.CYAN + "\nQuantidade: " + str(qtd) + Style.RESET_ALL +" | " + Fore.GREEN + "Quantidade e unidade Prefeitura: " + str(item["quantidade"]) + " " + item["unidade"] + Style.RESET_ALL)
-                        if input("Os itens acima são iguais ? (y/n) ") == 'y':
+                        if item['quantidade'] != 0 and item['quantidade'] != "0" and item['quantidade'] != None and int(item["codCliente"]) != 465312037:
                             dataPrefeitura.remove(item)
                             print("")
                             return item["quantidade"]
+                            # if input("Os itens acima são iguais ? (y/n) ") == 'y':
+                            #     dataPrefeitura.remove(item)
+                            #     print("")
+                            #     return item["quantidade"]
+                            # else:
+                            #     item["visited"] = False
+                            #     return False
                         else:
                             item["visited"] = False
                             return False
                     else:
-                        dataPrefeitura.remove(item)
+                        if item['quantidade'] != 0 and item['quantidade'] != "0" and item['quantidade'] != None and int(item["codCliente"]) != 465312037: 
+                            dataPrefeitura.remove(item)
                 
             return False
                             
@@ -130,7 +138,7 @@ class ChromeDriver:
         
         if p == False:
             print("\n\nItens não visitados da prefeitura")
-            with open("relatorio.txt", "w") as file:
+            with open(f"dump/{unidade}.txt", "w") as file:
                 for i in dataPrefeitura:
                     file.write("Cod: " + str(i["codCliente"]) + " | Nome: " + i["nomeCliente"] + "\n")
                     print("Cod: " + str(i["codCliente"]) + " | Nome: " + i["nomeCliente"])
@@ -140,7 +148,5 @@ class ChromeDriver:
         print("FIM DA TAREFA")
             
             
-        
-    
     def quitDriver(self):
         self.driver.quit()
