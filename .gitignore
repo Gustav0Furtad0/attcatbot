@@ -1,14 +1,2 @@
-/__pycache__
-chromedriver.exe
-catalogbra.xlsx
-itensBranetJF.xlsx
-/dist
-/.vscode
-exec.bat
-dist.rar
-dist2.rar
-dist3.rar
-relatorio.txt
-/builds
-/dump
-/target
+**
+*/.py

@@ -45,7 +45,7 @@ class ChromeDriver:
                         if item["nomeItem"] == name:
                             codItem = int(item["codCliente"])
                             break
-            
+
             for item in dataPrefeitura:
                 if int(item["codCliente"]) == codItem:
                     if dif == False:
@@ -63,20 +63,23 @@ class ChromeDriver:
                             # else:
                             #     item["visited"] = False
                             #     return False
+                        elif (item["quatidade"] == 0 or item["quantidade"] == "0") and qtd == 0:
+                            dataBranet.remove(item)
+                            return False
                         else:
                             item["visited"] = False
                             return False
                     else:
                         if item['quantidade'] != 0 and item['quantidade'] != "0" and item['quantidade'] != None and int(item["codCliente"]) != 465312037: 
                             dataPrefeitura.remove(item)
-                
+            
             return False
                             
         
         select = Select(self.driver.find_element(By.XPATH, "/html/body/div[@id='div_principal']/div[@id='div_principal']/div[@id='conteudo_template']/span[@id='conteudo']/form[@id='cadastro_itens']/div/div/div/div[1]/select"))
-        select.select_by_value('500')
+        select.select_by_value('1000')
         
-        sleep(3)
+        sleep(50)
         
         navigator = self.driver.find_element(By.XPATH, "/html/body/div[@id='div_principal']/div[@id='div_principal']/div/span/form/div/div/div/div[1]/span[2]")
         navigator = navigator.find_elements(By.TAG_NAME, 'a')
@@ -84,7 +87,7 @@ class ChromeDriver:
         for i in range(len(navigator)):
             if i != 0:
                 navigator[i].click();
-                sleep(4)
+                sleep(50)
                 
             rows = self.driver.find_elements(By.XPATH, "/html/body/div[@id='div_principal']/div[@id='div_principal']/div[@id='conteudo_template']/span[@id='conteudo']/form/div/div/div/div/table/tbody/tr")
             
@@ -107,7 +110,7 @@ class ChromeDriver:
                                         inputQtd[0].clear()
                                         inputQtd[0].send_keys(item)
 
-                                            
+                                        
                                         inputQtd = cels[7].find_element(By.TAG_NAME, 'div').find_elements(By.TAG_NAME, 'div')[1].find_element(By.TAG_NAME, 'span').find_elements(By.TAG_NAME, 'input')
                                         inputQtd[0].click()
                                         inputQtd[0].clear()

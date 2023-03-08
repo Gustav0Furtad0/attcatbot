@@ -1,9 +1,0 @@
-Cod: 465310638 | Nome: Bromoprida 10mg, Comprimido
-Cod: 465310610 | Nome: Acetato de dexametasona 0,1%, creme, bisnaga c/ 10g
-Cod: 465310135 | Nome: Fluoxetina, cloridrato 20mg cápsula/comprimido
-Cod: 465311915 | Nome: Hidrocortisona, Hemisuccinato 100mg - pó liofilizado para solução injetável
-Cod: 465210219 | Nome: Agulha para Caneta aplicadora de insulina caixa com 100 unidades.
-Cod: 465310625 | Nome: Penicilina g benzatina 600.000UI - pó liofilizado para suspensão injetável
-Cod: 465313118 | Nome: Penicilina procaina + penicilina potassica 300.000UI + 100.000UI  - pó liofilizado para suspensão injetável
-Cod: 465310541 | Nome: Salbutamol micronizado 100mcg/dose - aerossol - 200 doses
-FIM DA TAREFA
